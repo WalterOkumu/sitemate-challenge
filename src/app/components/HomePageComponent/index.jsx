@@ -154,7 +154,7 @@ const HomePageComponent = () => {
 
 	return (
 		<div className='container mx-auto p-4'>
-			<h1 className='text-2xl font-bold mb-4'>Home Page</h1>
+			<h1 className='text-2xl font-bold mb-4'>Sitemate backend challenge</h1>
 			{loading ? (
 				<p>Loading...</p>
 			) : allData.length > 0 ? (

@@ -13,9 +13,9 @@ export async function DELETE(request) {
   const db = client.db(dbName);
   const collection = db.collection('issues');
 
-  const { id } = await request.json();
+  const { _id } = await request.json();
 
-  const result = await collection.deleteOne({ _id: new ObjectId(id) });
+  const result = await collection.deleteOne({ _id: ObjectId.createFromHexString(_id) });
 
   if (result.deletedCount === 0) {
    return new Response(JSON.stringify({ message: 'Issue not found' }), {
